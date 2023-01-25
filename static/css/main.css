@@ -1,0 +1,15 @@
+body{
+    padding-top: 15px;
+}
+span{
+    font-weight: 700;
+}
+button{
+    margin: 15px;
+}
+h1{
+    font-weight: 600;
+}
+input {
+    size: 10px;
+}

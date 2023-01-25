@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    All contacts
+{% endblock %} 
+
+{% block body %}
+    {% if phonebook|length > 0 %}
+        <div class="container d-flex justify-content-center">
+            <h1>All contacts</h1>
+        </div>
+        <br>
+        <div class="container">
+            {% for contact in phonebook %}
+            <div class="alert alert-info">
+                <h2>{{ contact.name }}</h2>
+                <p>{{ contact.phone_number }}</p>
+                <p>EMAIL : {{ contact.email }}</p>
+                <a href="/{{ contact.id }}/edit" class="btn btn-success">Edit</a>
+                <a href="/{{ contact.id }}/delete" class="btn btn-danger">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container d-flex justify-content-center">
+            <h1>Your phonebook is empty :(</h1>
+        </div>
+    {% endif %}
+{% endblock %}

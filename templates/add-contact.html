@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    Add contact
+{% endblock %} 
+
+{% block body %}
+    <div class="container d-flex justify-content-center">
+        <h1>Add contact</h1>
+    </div>
+    <div class="container col align-self-center">
+        <form method="post">
+            <br>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter name">
+            <br>
+            <input type="text" name="phone_number" id="phone_number" class="form-control" pattern="[+]{0,1}[7-9]{1}[0-9]{10}" placeholder="Enter number">
+            <br>
+            <input type="text" name="email" id="email" class="form-control" pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}" placeholder="Enter email">
+        <br>
+        <div class="container d-flex justify-content-center">
+            <input type="submit" class="btn btn-success" value="Add contact"><br>
+        </div>
+        </form>
+    </div>
+{% endblock %}
