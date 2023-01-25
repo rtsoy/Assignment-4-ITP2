@@ -27,7 +27,7 @@ def add_contact():
         phone_number = request.form['phone_number']
         email = request.form['email']
 
-        contact = Phonebook(name=name, phone_number=phone_number, email=email)
+        contact = Phonebook(**request.form.to_dict())
 
         try:
             db.session.add(contact)
