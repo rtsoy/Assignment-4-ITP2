@@ -23,11 +23,12 @@ def main_page():
 @app.route('/add-contact', methods = ['POST', 'GET'])
 def add_contact():
     if request.method == 'POST':
-        name = request.form['name']
-        phone_number = request.form['phone_number']
-        email = request.form['email']
+#         name = request.form['name']
+#         phone_number = request.form['phone_number']
+#         email = request.form['email']
 
-        contact = Phonebook(name=name, phone_number=phone_number, email=email)
+#         contact = Phonebook(name=name, phone_number=phone_number, email=email)
+        contact = Phonebook(**request.form.to_dict(flat=False))
 
         try:
             db.session.add(contact)
